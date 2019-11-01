@@ -1,13 +1,15 @@
-# x.times , x.upto(y)  , (x..y) ranges
+#Functions
 
-3.times{
- puts "Hey There!"
-}
-
-2.upto(10).each do |i|
- puts i
+def add_nums(num_1, num_2)
+ return num_1.to_i + num_2.to_i
 end
 
-(0..5).each do |i|
- puts i
+puts add_nums(2,2)
+# when you deal with function, variables are passing by value so their value can't be change inside the function
+x = 1
+
+def change_x(x)
+ return x = 2
 end
+
+puts x
