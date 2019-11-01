@@ -1,9 +1,18 @@
-age = 21
+print "Enter Greeting : "
+greeting = gets.chomp # use chomp if we wanna remove a new line that goes with the input 
 
-unless age > 4 
- puts "No school" # This is going to execute this line if age is less than 4
+case greeting
+when "French", "french"
+ puts "Salut"
+ exit
+when "Spanish", "spanish"
+ puts "Hola"
+ exit
+when "Deutsch", "deutsch"
+ puts "Hallo"
+ exit
+when "Italian", "italian"
+ puts "Ciao"
 else
- puts "Go to school"
-end
-
-puts "You're Young" if age < 18
+ puts "Hello"
+end 
