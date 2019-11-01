@@ -1,9 +1,9 @@
-# Comparison : == != < >  >= <= === !==
-# Logical : && || ! and or not
+age = 21
 
-puts "true && false = " + (true && false).to_s 
-puts "true && true = " + (true && true).to_s 
-puts "true || false = " + (true || false).to_s 
-puts "true or false = " + (true or false).to_s 
-puts "!true = " + (!true).to_s 
-puts "not false = " + (not false).to_s 
+unless age > 4 
+ puts "No school" # This is going to execute this line if age is less than 4
+else
+ puts "Go to school"
+end
+
+puts "You're Young" if age < 18
