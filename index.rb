@@ -1,15 +1,29 @@
-#Functions
+# Exception handling
+print "Enter a number: "
+first_num =   gets.to_i
+print "Enter another "
+second_num = gets.to_i
 
-def add_nums(num_1, num_2)
- return num_1.to_i + num_2.to_i
+begin 
+ answer = first_num / second_num
+rescue
+ puts "You can't divide by zero"
+ exit
 end
 
-puts add_nums(2,2)
-# when you deal with function, variables are passing by value so their value can't be change inside the function
-x = 1
+puts "#{first_num} / #{second_num} = #{answer}" 
 
-def change_x(x)
- return x = 2
+
+age = 12
+
+def check_age(age)
+  raise ArgumentError, "Enter Positive number" unless age > 0
 end
 
-puts x
+begin
+ check_age(-1)
+rescue ArgumentError
+ puts "That is an impossible age"
+end 
+
+
