@@ -1,4 +1,8 @@
-# Ternary operator
-age = 21
+x = 1
 
-puts (age >= 50) ? "Old" : "Young" # ? means true, : means otherwise, else, false
+loop do
+ x += 1
+ next unless (x%2) == 0
+ puts x 
+break if x >= 10
+end
