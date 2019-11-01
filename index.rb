@@ -1,8 +1,9 @@
-age = 21
-if (age >= 5) && (age <= 6)
- puts "You're in Kindergraten"
-elseif (age >= 7) && (age <= 13)
- puts "You're in Middle School"
-else 
- puts "Stay Home"
-end
+# Comparison : == != < >  >= <= === !==
+# Logical : && || ! and or not
+
+puts "true && false = " + (true && false).to_s 
+puts "true && true = " + (true && true).to_s 
+puts "true || false = " + (true || false).to_s 
+puts "true or false = " + (true or false).to_s 
+puts "!true = " + (!true).to_s 
+puts "not false = " + (not false).to_s 
