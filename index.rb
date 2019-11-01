@@ -1,11 +1,9 @@
-# Constant
-# A constant should start with uppercase letter
+# File I/O
 
-PI = 3.14159265359
-PI = 3.15 # when we say constant that doesn't mean we can't change the value of it but instead will get an error
+write_handler = File.new("Greeting.out", "w")
 
-puts PI
+write_handler.puts("Hello, There!").to_s
+write_handler.close
 
-#ndex.rb:5: warning: already initialized constant PI
-#index.rb:4: warning: previous definition of PI was here
-#3.15
+data_from_file = File.read("Greeting.out")
+puts "Data From File: " + data_from_file
