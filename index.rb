@@ -1,18 +1,4 @@
-print "Enter Greeting : "
-greeting = gets.chomp # use chomp if we wanna remove a new line that goes with the input 
+# Ternary operator
+age = 21
 
-case greeting
-when "French", "french"
- puts "Salut"
- exit
-when "Spanish", "spanish"
- puts "Hola"
- exit
-when "Deutsch", "deutsch"
- puts "Hallo"
- exit
-when "Italian", "italian"
- puts "Ciao"
-else
- puts "Hello"
-end 
+puts (age >= 50) ? "Old" : "Young" # ? means true, : means otherwise, else, false
