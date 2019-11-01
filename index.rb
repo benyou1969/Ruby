@@ -1,11 +1,5 @@
-numbers = [1,2,3,4,5,6]
+# (0..5) rang
 
-for number in numbers 
- puts "#{number},  "
-end
-
-groceries = ["Bananas", "sweet potatoes", "Pasts"]
-
-groceries.each do |food|
- puts "Get some #{food}"
+(0..5).each do |i|
+ puts i
 end
