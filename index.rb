@@ -1,20 +1,13 @@
-class Bird
-def tweet(bird_type)
-  bird_type.tweet
-end
-end
+# Symbols inside of ruby are basically string that cannot be changed and you normaly going to  use them to conserve memory or to speed string comparison and you would usually use a Symbols versus a string whenever  you need string that's value doesn't need to change the usually used in hashes for keys and so forth
 
-class Cardinal < Bird 
-  def tweet 
-    puts "Tweet Tweet"
-  end
-end
-class Parrot < Bird
-  def tweet
-    puts "Squwak"
-  end
-end
+:benyou
 
-generic_bird = Bird.new
-generic_bird.tweet(Cardinal.new)
-generic_bird.tweet(Parrot.new)
+puts :benyou
+puts :benyou.to_s
+puts :benyou.class
+puts :benyou.object_id
+
+##############
+
+attr_accessor :name, :weight, :height
+
