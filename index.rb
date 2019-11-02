@@ -38,3 +38,5 @@ puts 'rjust '+ full_name.rjust(20, '.')
 puts 'ljust ' +full_name.ljust(20, '.')
 puts 'center' +full_name.center(20, '.')
 
+puts full_name.chop #...mansou
+puts full_name.chomp('ur') ...manso and  #illuminate new line if it exists
