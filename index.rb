@@ -1,28 +1,27 @@
-# Hashes are just collection of key value paris
-number_has = {"PI" => 3.14, 
-              "Golden" => 1.618,
-              "e" => 2.718}
-puts number_has["e"]
+# Enumerable
+class Menu
+  include Enumerable
 
-superheroes = Hash["Clark Kent", "Supperman", "Bruce Wayne", "Batman"]
-puts superheroes["Bruce Wayne"]
-
-superheroes["Barry Allen"] = "Flash"
-
-samp_hash = Hash.new("No such key")
-puts samp_hash["Dog"]
-
-superheroes = Hash["Clark Kent", "Supperman", "Bruce Wayne", "Batman", "Mansour Benyoucef", "Ben"]
-superheroes.update(superheroes) # update is going to eliminate duplicate value
-
-superheroes.each do |key, value|
-   puts key + " => " + value
+  def each
+    yield "Pizza"
+    yield "Spaghetti"
+    yield "water"
+  end
 end
 
-puts "Has Key Mansour Benyoucef: " + superheroes.has_key?("Mansour Benyoucef").to_s
-puts "Has value Ben: " + superheroes.has_value?("Ben").to_s
-puts "is Hash empty" + superheroes.empty?.to_s
-puts "Size of hash: " + superheroes.size.to_s
+menu_options = Menu.new
 
-superheroes.delete("Mansour Benyoucef")
-puts "Size after deleted " + superheroes.size.to_s
+menu_options.each do |item|
+  puts "would you lie : #{item}"
+end
+
+p menu_options.find{|item| item = "Pizza"}
+p menu_options.select {|item| item.size <=2}
+p menu_options.reject {|item| item.size <=4}
+p menu_options.first
+p menu_options.take(2)
+p menu_options.drop(2)
+p menu_options.max
+p menu_options.min
+
+p menu_options.sort
