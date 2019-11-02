@@ -1,42 +1,52 @@
-puts "#{1+11}this called interpolation"
-puts "Add Them #{34+44} \n "
-puts 'Add Them #{34+44} \n '
+class Animal
+ def initialize
+   puts "creating new animal"
+ end
 
-multiline_string = <<EOM
-this is very long string
-that contains interpolation 
-like #{33-31} \n
-EOM
+ def set_name(newName)
+  @name = newName
+ end
+ 
+ def get_name
+  @name
+ end
 
-puts multiline_string
+ def name
+  @name
+ end 
 
-first_name = "Benyou"
-last_name = "Mansour"
-full_name = first_name + last_name
+ def name=(newName)
+  if newName.is_a?(Numeric)
+   puts "Name can't be a Numer"
+  else 
+   @name = newName
+  end 
+ end
+end
 
-puts full_name.include?("Benyou")
-puts full_name.size
-puts "Vowels: " + full_name.count("eauio").to_s 
-puts "Consaonants: " + full_name.count("^eauio").to_s
-puts full_name.start_with?("Mansour") 
-puts full_name.start_with?("Benyou")
+cat = Animal.new
+cat.set_name('katty')
 
-puts "Index: " + full_name.index("Mansour").to_s
-puts first_name.equal?first_name 
+puts cat.get_name
+puts cat.name
 
-puts full_name.upcase
-puts full_name.downcase
-puts full_name.swapcase
+cat.name = "Sophie"
+puts cat.name
 
-full_name = "      " + full_name
 
-puts 'lstrip '+ full_name.lstrip
-puts 'rstrip ' + full_name.rstrip
-puts 'strip ' + full_name.strip
+# shortcut for creating all the setter and getter
+class Dog 
+ #Instead of creating all the setter and getter you can use
+ # attr_reader :name, :height, :weight
+ # attr_writter :name, :height, :weight
+ attr_accessor :name, :height, :weight
 
-puts 'rjust '+ full_name.rjust(20, '.')
-puts 'ljust ' +full_name.ljust(20, '.')
-puts 'center' +full_name.center(20, '.')
+ def bark
+   return "Bark"
+ end
+end
 
-puts full_name.chop #...mansou
-puts full_name.chomp('ur') ...manso and  #illuminate new line if it exists
+rover = Dog.new
+rover.name = "Rover"
+puts rover.name 
+puts rover.bark
