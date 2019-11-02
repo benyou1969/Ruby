@@ -1,63 +1,33 @@
-class Animal
- def initialize
-   puts "creating new animal"
- end
+# Modules are made up of methods and instance variables just like classes and they can't be instantiated which means  you can't turn them into an object, most reasons you're going to use this is to add functionality to a class because we're only going to be able to inherit one class we're create a class but we'll be able to inherit mutliple modules
 
- def set_name(newName)
-  @name = newName
- end
+require_relative "Human"
+require_relative "Smart"
+
+module Animal
+  def make_sound
+    puts "Grrrr"
+  end
+end 
  
- def get_name
-  @name
- end
-
- def name
-  @name
- end 
-
- def name=(newName)
-  if newName.is_a?(Numeric)
-   puts "Name can't be a Numer"
-  else 
-   @name = newName
-  end 
- end
-end
-
-cat = Animal.new
-cat.set_name('katty')
-
-puts cat.get_name
-puts cat.name
-
-cat.name = "Sophie"
-puts cat.name
-
-
-# shortcut for creating all the setter and getter
-class Dog 
- #Instead of creating all the setter and getter you can use
- # attr_reader :name, :height, :weight
- # attr_writter :name, :height, :weight
- attr_accessor :name, :height, :weight
-
- def bark
-   return "Bark"
- end
+class Dog
+ include Animal
 end
 
 rover = Dog.new
-rover.name = "Rover"
-puts rover.name 
-puts rover.bark
+rover.make_sound
 
-class GermanShepard < Dog
- def bark
-  return 'Loud bark'
+class Scientist
+ include Human
+ prepend Smart #if you want your module to supersede so that if a function is in both this class as well as the module you are taking it from you would use prepend instead of include
+ 
+ def act_smart
+  return "E = mc2 + .. "
  end
-end
+ 
+end 
 
-fox = GermanShepard.new
-fox.name = 'Fox'
-puts fox.name
-puts fox.bark()
+ben = Scientist.new
+ben.name = "Benyocuef, Masnour"
+puts ben.name
+ ben.act_smart
+puts "run "
