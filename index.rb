@@ -50,3 +50,14 @@ rover = Dog.new
 rover.name = "Rover"
 puts rover.name 
 puts rover.bark
+
+class GermanShepard < Dog
+ def bark
+  return 'Loud bark'
+ end
+end
+
+fox = GermanShepard.new
+fox.name = 'Fox'
+puts fox.name
+puts fox.bark()
